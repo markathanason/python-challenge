@@ -14,10 +14,10 @@ with open(budget_data_path, newline="", encoding="utf8") as budget_data:
 		date.append(str(row[0]))
 
 		profit_losses.append(int(row[1]))
-
+		#iterates through and adds the 2nd value to the previous
 		i = [profit_losses[i+1] - profit_losses[i] for i in range(len(profit_losses)-1)]
 
-zipped = zip(date, i)
+zipped = zip(date[1::], i[::])
 zipped_list = list(zipped)
 
 profit_losses_sum = sum(profit_losses)
