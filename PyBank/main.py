@@ -8,7 +8,7 @@ profit_losses = []
 
 with open(budget_data_path, newline="", encoding="utf8") as budget_data:
 	csvreader = csv.reader(budget_data, delimiter=",")
-	next(budget_data)
+	next(csvreader)
 	for row in csvreader:
 
 		date.append(str(row[0]))
@@ -35,7 +35,7 @@ for row in zipped_list:
 	if row[1] == decrease:
 		month_dec = row[0]
 
-with open('Resources/PyBank.txt', 'w') as text_file:
+with open('Resources/output.txt', 'w') as text_file:
 	print(f'Financial Analysis', file=text_file)
 	print(f'___________________________', file=text_file)
 	print(f'Total Months: {len(date)}', file=text_file)
