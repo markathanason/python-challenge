@@ -10,8 +10,8 @@ with open(budget_data_path, newline="", encoding="utf8") as budget_data:
 	for row in csvreader:
 		date.append(str(row[0]))
 		money.append(int(row[1]))
-		#iterates through and adds the 2nd value to the previous
-		i = [money[i+1] - money[i] for i in range(len(money)-1)]
+#iterates through and adds the 2nd value to the previous
+i = [money[i+1] - money[i] for i in range(len(money)-1)]
 
 zipped = zip(date[1::], i[::])
 zipped_list = list(zipped)
