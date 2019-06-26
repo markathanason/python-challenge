@@ -14,7 +14,7 @@ with open(election_data_path, newline="", encoding="utf8") as election_data:
 	for row in csvreader:
 		count = count+1
 		manifest.append(row[2])
-	for i in list(sorted(set(manifest),key=manifest.index)):
+	for i in list(sorted(set(manifest), key=manifest.index)):
 		individual.append(i)
 		j = manifest.count(i)
 		vote_count.append(j)
